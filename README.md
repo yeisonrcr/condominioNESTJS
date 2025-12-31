@@ -1,4 +1,4 @@
-# 🏘️ ROSEDAL II - Sistema de Gestión de Condominio
+# 🏘️ Condominio II - Sistema de Gestión de Condominio
 
 Sistema completo de gestión para condominios con control de visitas, autenticación avanzada, y comunicación en tiempo real.
 
@@ -24,7 +24,7 @@ Sistema completo de gestión para condominios con control de visitas, autenticac
 
 ## 📁 Estructura del Proyecto
 ```
-rosedal2/
+Condominio2/
 ├── backend/              # API NestJS
 │   ├── src/
 │   │   ├── modules/      # Módulos (auth, users, houses, visits)
@@ -54,8 +54,8 @@ rosedal2/
 
 ### 1️⃣ Clonar repositorio
 ```bash
-git clone https://github.com/TU_USUARIO/rosedal2.git
-cd rosedal2
+git clone https://github.com/TU_USUARIO/Condominio2.git
+cd Condominio2
 ```
 
 ### 2️⃣ Configurar Backend
@@ -108,9 +108,9 @@ Después del seed:
 
 | Rol | Email | Password |
 |-----|-------|----------|
-| Admin | admin@rosedal2.com | Admin123456789 |
-| Oficial | oficial@rosedal2.com | Oficial123456789 |
-| Residente | filial@rosedal2.com | Filial123456789 |
+| Admin | admin@Condominio2.com | Admin123456789 |
+| Oficial | oficial@Condominio2.com | Oficial123456789 |
+| Residente | filial@Condominio2.com | Filial123456789 |
 
 ## 🌐 URLs
 
