@@ -1,0 +1,4 @@
+# Configuración de workspaces para pnpm
+packages:
+  - "apps/*"
+  - "packages/*"

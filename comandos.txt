@@ -1,0 +1,53 @@
+# ============================================
+# ROSEDAL II - COMANDOS DE INICIO COMPLETO
+# ============================================
+
+# --- PASO 1: LIMPIAR TODO ---
+cd C:\rosedal2
+docker-compose down -v
+taskkill /F /IM node.exe
+
+# --- PASO 2: LIMPIAR BACKEND ---
+cd C:\rosedal2\backend
+Remove-Item -Recurse -Force node_modules, dist -ErrorAction SilentlyContinue
+pnpm install
+pnpm prisma:generate
+
+# --- PASO 3: LIMPIAR FRONTEND ---
+cd C:\rosedal2\frontend
+Remove-Item -Recurse -Force node_modules, apps\*\node_modules, packages\*\node_modules, apps\*\.next -ErrorAction SilentlyContinue
+pnpm install
+
+# --- PASO 4: INICIAR DOCKER ---
+cd C:\rosedal2
+docker-compose up -d
+Start-Sleep -Seconds 15
+
+# --- PASO 5: VERIFICAR DOCKER ---
+docker ps
+
+# --- PASO 6: MIGRACIONES Y SEED ---
+cd C:\rosedal2\backend
+pnpm prisma:migrate
+pnpm prisma:seed
+
+# --- PASO 7: INICIAR BACKEND ---
+cd C:\rosedal2\backend
+pnpm start:dev
+
+# --- PASO 8: INICIAR FRONTEND (En terminales separadas) ---
+# Terminal 2:
+cd C:\rosedal2\frontend
+pnpm dev:cliente
+
+# Terminal 3:
+cd C:\rosedal2\frontend
+pnpm dev:admin
+
+# Terminal 4:
+cd C:\rosedal2\frontend
+pnpm dev:oficial
+
+# --- O TODAS A LA VEZ ---
+cd C:\rosedal2\frontend
+pnpm dev
